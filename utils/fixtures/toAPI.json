@@ -11,7 +11,7 @@
     "businessSizeId": "Micro",
     "howManyEmployees": "2",
     "businessCategory": "Section C: Manufacturing",
-    "businessReferenceNumber": "1231",
+    "businessReferenceNumber": "",
     "businessDescription": "Jewellery making",
     "businessName": "Trading Name",
     "registeredName": "Registered Name",
@@ -64,7 +64,9 @@
       "test.png"
     ],
     "ratesBill": [],
-    "leaseOrRentalAgreement": [],
+    "leaseOrRentalAgreement": [
+      "faked_it_out_for_local_testing.ext"
+    ],
     "employeesConfirmation": [],
     "photoId": [
       "faked_it_out_for_local_testing.ext"

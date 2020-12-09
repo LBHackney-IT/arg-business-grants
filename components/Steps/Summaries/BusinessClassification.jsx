@@ -8,11 +8,5 @@ export default () => (
     <p>
       <strong>Small business</strong>: 10-49 employees
     </p>
-    <p>
-      <strong>Medium business</strong>: 50-250 employees
-    </p>
-    <p>
-      <strong>Large business</strong>: more than 250 employees
-    </p>
   </ExpandableDetails>
 );

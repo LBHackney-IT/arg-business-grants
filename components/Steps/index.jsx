@@ -94,13 +94,16 @@ export const inputLabels = {
     },
     businessSizeId: {
       label: 'What is the size of your business?',
+      hint:
+        'You must be a micro or a small business to be eligible for this grant.',
       children: <BusinessClassificationSummary />,
       options: options.VALID_BUSINESS_SIZE,
       validation: { required: true },
     },
     howManyEmployees: {
       label: 'How many employees does your business have?',
-      hint: 'Full time equivalents',
+      hint: `Full time equivalents. Please note this figure should not include the business owner, so if you are a sole
+      trader, or self employed, and/or your business has no employees other than yourself, this figure should be 0.`,
       inputClassName: 'govuk-input--width-10',
       type: 'number',
       inputMode: 'numeric',
@@ -138,8 +141,8 @@ export const inputLabels = {
     businessReferenceNumber: {
       label: (
         <>
-          Please provide the reference number that best describes your business
-          from the business classification website (
+          If you are able to, please provide the reference number that best
+          describes your business from the business classification website (
           <a
             href="http://resources.companieshouse.gov.uk/sic/"
             target="_blank"
@@ -147,12 +150,9 @@ export const inputLabels = {
           >
             http://resources.companieshouse.gov.uk/sic/
           </a>
-          )
+          ).
         </>
       ),
-      validation: {
-        required: true,
-      },
     },
     businessDescription: {
       label:
@@ -182,8 +182,8 @@ export const inputLabels = {
     businessStructureText: {},
     businessIdentifyType: {
       label: 'Please supply one of the following Business Identifying Numbers:',
-      hint:
-        'Where available, please provide your Company Number as listed on Companies House. If you don’t have a Company Number, please provide another number from the list below.',
+      hint: `Where available, please provide your Company Number as listed on Companies House. If you don’t have a Company
+        Number, please provide another number from the list below.`,
       options: options.TYPE_IDENTIFIER_NUMBER,
       validation: {
         required: true,
@@ -204,8 +204,8 @@ export const inputLabels = {
     },
     businessIdentifyNumberVAT: {
       type: 'number',
-      hint:
-        "Please enter your 9 digit number, without the 'GB' at the start, for example 123456789. You can find it on your VAT registration certificate.",
+      hint: `Please enter your 9 digit number, without the 'GB' at the start, for example 123456789. You can find it on your
+        VAT registration certificate.`,
       validation: {
         required: true,
         pattern: {
@@ -251,18 +251,20 @@ export const inputLabels = {
       hint: (
         <>
           <p>
-            Please provide your usual business address in Hackney If you are now
-            working from home as a result of the pandemic but are normally based
-            in a commercial premises in Hackney and plan to return to the same
-            commercial premises in the future please provide this address.
+            Please provide your usual business address in Hackney. If you are
+            now working from home as a result of the pandemic, but are normally
+            based in a commercial premises in Hackney, and plan to return to the
+            same commercial premises in the future, please provide this address.
           </p>
           <p>
-            For businesses who were working from a residential premises in
-            Hackney prior to the pandemic and who will remain working from this
-            premises in the future please provide this address. For market
-            traders please provide the most accurate nearby address for your
-            market stall if you're unable to provide your exact market pitch
-            address.
+            For businesses who were working from residential premises in Hackney
+            prior to the pandemic, and who will remain working from this
+            premises in the future, please provide this address.
+          </p>
+          <p>
+            For market traders, please provide the most accurate nearby address
+            for your market stall if you are unable to provide your exact market
+            pitch address.
           </p>
         </>
       ),
@@ -285,10 +287,14 @@ export const inputLabels = {
     },
     businessImpactStatement: {
       label: 'How has your business been impacted?',
-      hint: `Please provide a short written statement setting out how your business has been severely impacted by the
-      lockdown between 5 November 2020 - 2 December 2020. This should include details on why and how your business was
-      severely impacted. You should also set out if you are able to trade online, the scale of your Coronavirus related
-      losses, and any ongoing fixed business costs you have.`,
+      hint: `Please provide a short written statement setting out how your business was severely impacted by the
+      lockdown between 5 November 2020 - 2 December 2020. This must include details on why and how your business was
+      severely impacted by the lockdown, if you were able to trade online, the financial scale of Coronavirus related
+      losses (for example % drop in sales, loss of income in £s), and any monthly ongoing fixed business costs you have
+      and what these are e.g rent, utility bills.`,
+      validation: {
+        required: true,
+      },
     },
   },
   contact: {
@@ -375,8 +381,9 @@ export const inputLabels = {
   supplementaryInformation: {
     bankStatement: {
       label: 'Bank Statement:',
-      hint:
-        'Please provide your November 2020 business bank statement - this must correspond with the bank account details provided in this application form. If you do not have your November bank statement, please submit your most recent bank statement.',
+      hint: `Please provide your November 2020 business bank statement - this must correspond with the bank account details
+        provided in this application form. If you do not have your November bank statement, please submit your most
+        recent bank statement.`,
       validation: {
         validate: (value) => value.length > 0 || 'Document required',
       },
@@ -384,22 +391,27 @@ export const inputLabels = {
     ratesBill: {
       label: 'Business Rates Bill:',
       hint:
-        'Please provide a copy of your latest business rates bill. If you do not have a copy of this bill you may still submit your grant application, but please note that processing may take longer.',
+        'If applicable, please provide a copy of your latest London Borough of Hackney business rates bill.',
     },
     leaseOrRentalAgreement: {
-      label: 'Business premises lease or rental agreement:',
-      hint:
-        'For businesses operating from a commercial premises please provide a copy of your business premises lease, rental agreement, mortgage statement, or market trading licence.',
+      label:
+        'Business premises lease, rental agreement, mortgage statement or market pitch licence:',
+      hint: `Please provide a copy of your business premises lease, rental agreement, mortgage statement, or market trading
+        licence.`,
+      validation: {
+        required: true,
+      },
     },
     employeesConfirmation: {
       label: 'Confirmation of the amount of employees in your business:',
-      hint:
-        'Please provide a copy of your most up to date business payroll record showing the number of people employed by your business. If a payroll record is not available please provide another form of evidence which verifies the number of people employed by your business.',
+      hint: `If your business employs staff, please provide a copy of your most up to date business payroll record showing
+        the number of people employed by your business. If a payroll record is not available, please provide another
+        form of evidence which verifies the number of people employed by your business.`,
     },
     photoId: {
       label: 'Photographic ID:',
       hint:
-        'Please provide a form of photo identification such as a passport or driving licence.',
+        'Please provide a current form of photo identification such as a passport or driving licence.',
       validation: {
         validate: (value) => value.length > 0 || 'Document required',
       },
@@ -430,8 +442,8 @@ export const inputLabels = {
       validation: { required: true },
     },
     businessMeetsCriteria: {
-      label:
-        'I declare that the business meets the criteria for the Additional Restrictions Grant that I am applying for and that the information I have provided is complete and accurate',
+      label: `I declare that the business meets the criteria for the Additional Restrictions Grant that I am applying for and
+        that the information I have provided is complete and accurate`,
       validation: { required: true },
     },
     businessIWillInform: {
@@ -563,8 +575,8 @@ export const inputLabels = {
       validation: { required: true },
     },
     businessHappyContacted: {
-      label:
-        'I confirm that I am happy to be contacted by Hackney Council in the future for details of new business funding opportunities and in relation to other business initiatives',
+      label: `I confirm that I am happy to be contacted by Hackney Council in the future for details of new business funding
+        opportunities and in relation to other business initiatives`,
     },
   },
 };
