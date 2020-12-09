@@ -117,12 +117,10 @@ const ApplicationsList = ({
     },
     []
   );
-  const handleCsvDownload = async ({ grant_type }) => {
+  const handleCsvDownload = async () => {
     try {
       setError(null);
-      const csv = await patchApplications({
-        grant_type: grant_type,
-      });
+      const csv = await patchApplications();
       window.open(encodeURI(`data:text/csv;charset=utf-8,${csv}`));
     } catch (e) {
       e.response.status = 400;
@@ -187,34 +185,11 @@ const ApplicationsList = ({
         <button
           className="govuk-button govuk-button--secondary govuk-!-margin-right-1"
           data-module="govuk-button"
-          onClick={() =>
-            handleCsvDownload({ grant_type: 'lrsg_closed_businesses' })
-          }
+          onClick={handleCsvDownload}
           {...csvExportProps}
         >
-          Export LSRG (Closed) Panel Approved Payments
+          Export Panel Approved Payments
         </button>
-        <br />
-
-        <button
-          className="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
-          onClick={() => handleCsvDownload({ grant_type: 'lrsg_sector' })}
-          {...csvExportProps}
-        >
-          Export LSRG (Sector) Panel Approved Payments
-        </button>
-        <br />
-
-        <button
-          className="govuk-button govuk-button--secondary"
-          data-module="govuk-button"
-          onClick={() => handleCsvDownload({ grant_type: 'lrsg_open' })}
-          {...csvExportProps}
-        >
-          Export LSRG (Open) Panel Approved Payments
-        </button>
-        <br />
       </p>
     </>
   ) : (

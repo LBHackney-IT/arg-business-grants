@@ -8,13 +8,7 @@ import { TextArea, Button } from 'components/Form';
 
 import styles from './Comments.module.css';
 
-const Comments = ({
-  applicationId,
-  status,
-  lrsgClosedBusinessesAmount,
-  lrsgSectorAmount,
-  lrsgOpenAmount,
-}) => {
+const Comments = ({ applicationId, status, grantAmountAwarded }) => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const { register, errors, handleSubmit, reset } = useForm();
@@ -43,13 +37,7 @@ const Comments = ({
   });
   useEffect(() => {
     fetchData();
-  }, [
-    applicationId,
-    status,
-    lrsgClosedBusinessesAmount,
-    lrsgSectorAmount,
-    lrsgOpenAmount,
-  ]);
+  }, [applicationId, status, grantAmountAwarded]);
   if (!applicationId) {
     return null;
   }
@@ -86,9 +74,7 @@ const Comments = ({
 Comments.propTypes = {
   applicationId: PropTypes.string.isRequired,
   status: PropTypes.string,
-  lrsgClosedBusinessesAmount: PropTypes.string,
-  lrsgSectorAmount: PropTypes.string,
-  lrsgOpenAmount: PropTypes.string,
+  grantAmountAwarded: PropTypes.string,
 };
 
 export default Comments;

@@ -29,19 +29,16 @@ const ApplicationGrantAmountSelector = ({
   applicationId,
   name,
   label,
-  grantPaymentExported,
   options,
   storeAs,
 }) => {
   const [error, setError] = useState();
   const [value, setValue] = useState(grantAmountAwarded);
-  const tag = grantPaymentExported ? 'Exported' : null;
   return (
     <>
       <Select
         name={name}
         label={label}
-        tag={tag}
         options={options}
         onChange={handleOnChange(
           setError,

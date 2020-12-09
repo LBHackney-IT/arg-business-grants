@@ -9,7 +9,7 @@ describe('<ApplicationGrantAmountSelector>', () => {
       const setErrorSpy = jest.fn();
 
       const applicationId = 1;
-      const storeAs = 'lsrgGrant';
+      const storeAs = 'additionalRestrictionsGrant';
       const grantAmountAwarded = '25565.0';
       await handleOnChange(
         setErrorSpy,
@@ -31,7 +31,7 @@ describe('<ApplicationGrantAmountSelector>', () => {
       const setErrorSpy = jest.fn();
 
       const applicationId = 1;
-      const storeAs = 'lsrgGrant';
+      const storeAs = 'additionalRestrictionsGrant';
       const grantAmountAwarded = '25565.0';
       await handleOnChange(
         setErrorSpy,
@@ -59,7 +59,7 @@ describe('<ApplicationGrantAmountSelector>', () => {
       const setErrorSpy = jest.fn();
 
       const applicationId = 1;
-      const storeAs = 'lsrgGrant';
+      const storeAs = 'additionalRestrictionsGrant';
       const grantAmountAwarded = '25565.0';
       await handleOnChange(
         setErrorSpy,
@@ -80,7 +80,7 @@ describe('<ApplicationGrantAmountSelector>', () => {
       const setErrorSpy = jest.fn();
 
       const applicationId = 1;
-      const storeAs = 'lsrgGrant';
+      const storeAs = 'additionalRestrictionsGrant';
       const grantAmountAwarded = '25565.0';
       await handleOnChange(
         setErrorSpy,
@@ -102,7 +102,7 @@ describe('<ApplicationGrantAmountSelector>', () => {
       const setErrorSpy = jest.fn();
 
       const applicationId = 1;
-      const storeAs = 'lsrgGrant';
+      const storeAs = 'additionalRestrictionsGrant';
       const grantAmountAwarded = '25565.0';
       await handleOnChange(
         setErrorSpy,
