@@ -1,0 +1,7 @@
+alter table application_assessment rename column lrsg_closed_businesses_amount to grant_amount_awarded;
+alter table application_assessment drop column lrsg_sector_amount;
+alter table application_assessment drop column lrsg_open_amount;
+
+alter table application_assessment drop column lrsg_closed_businesses_payment_exported;
+alter table application_assessment drop column lrsg_sector_payment_exported;
+alter table application_assessment drop column lrsg_open_payment_exported;
