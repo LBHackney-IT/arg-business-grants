@@ -32,6 +32,17 @@ export default function confirmation() {
           All applicants are advised to save and/or print a copy of their
           application.
         </WarningText>
+        <p className="govuk-body">
+          To help us improve this service, all applicants are encouraged to
+          complete the{' '}
+          <a
+            className="govuk-link"
+            href={process.env.NEXT_PUBLIC_EQUALITIES_GOOGLE_FORM_URL}
+          >
+            Equalities Monitoring Google Form
+          </a>{' '}
+          (takes 60 seconds).
+        </p>
       </div>
       {formData && (
         <div>
