@@ -55,7 +55,6 @@ export const inputLabels = {
         </>
       ),
       validation: { required: true },
-      adminValidation: true,
     },
     servedLegalNotices: {
       label:
@@ -82,15 +81,14 @@ export const inputLabels = {
           ?
         </>
       ),
+      adminValidation: true,
+      validation: { required: true },
     },
-    validation: { required: true },
-    adminValidation: true,
   },
   business: {
     liableForRates: {
       label: 'Is your business liable for business rates?',
       validation: { required: true },
-      adminValidation: true,
     },
     businessSizeId: {
       label: 'What is the size of your business?',
@@ -99,6 +97,7 @@ export const inputLabels = {
       children: <BusinessClassificationSummary />,
       options: options.VALID_BUSINESS_SIZE,
       validation: { required: true },
+      adminValidation: true,
     },
     howManyEmployees: {
       label: 'How many employees does your business have?',
@@ -136,7 +135,6 @@ export const inputLabels = {
         required: true,
         validate: (value) => value !== '',
       },
-      adminValidation: true,
     },
     businessReferenceNumber: {
       label: (
@@ -160,6 +158,7 @@ export const inputLabels = {
       validation: {
         required: true,
       },
+      adminValidation: true,
     },
     businessName: {
       label: 'Business Trading Name:',
@@ -295,6 +294,7 @@ export const inputLabels = {
       validation: {
         required: true,
       },
+      adminValidation: true,
     },
   },
   contact: {
@@ -303,12 +303,14 @@ export const inputLabels = {
       validation: {
         required: 'First Name is required',
       },
+      adminValidation: true,
     },
     lastName: {
       label: 'Last Name:',
       validation: {
         required: 'Last Name is required',
       },
+      adminValidation: true,
     },
     emailAddress: {
       label: 'Email Address:',
