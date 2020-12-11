@@ -1,45 +1,39 @@
-import { handleOnChange } from './ApplicationGrantAmountSelector';
+import { handleOnChange, handleSubmit } from './ApplicationGrantAmountSelector';
 
 describe('<ApplicationGrantAmountSelector>', () => {
-  describe('handleOnChange()', () => {
+  describe('handleSubmit()', () => {
     it('Patches the grant application', async () => {
       const grantApplicationPatcherSpy = jest.fn();
-      const setValueSpy = jest.fn();
-      const onChangeSpy = jest.fn();
       const setErrorSpy = jest.fn();
 
+      const value = 'Other';
+      const customValue = 25565.0;
       const applicationId = 1;
       const storeAs = 'additionalRestrictionsGrant';
-      const grantAmountAwarded = '25565.0';
-      await handleOnChange(
-        setErrorSpy,
-        setValueSpy,
-        onChangeSpy,
+      const grantAmountAwarded = 25565;
+      await handleSubmit(
+        value,
+        customValue,
         grantApplicationPatcherSpy,
         applicationId,
-        storeAs
-      )(grantAmountAwarded);
+        storeAs,
+        setErrorSpy
+      );
       expect(grantApplicationPatcherSpy).toHaveBeenCalledWith(applicationId, {
         [storeAs]: grantAmountAwarded,
       });
     });
 
     it('Sets the value to the awarded grant amount', async () => {
-      const grantApplicationPatcherSpy = jest.fn();
       const setValueSpy = jest.fn();
-      const onChangeSpy = jest.fn();
+      const setCustomValueVisibleSpy = jest.fn();
       const setErrorSpy = jest.fn();
 
-      const applicationId = 1;
-      const storeAs = 'additionalRestrictionsGrant';
       const grantAmountAwarded = '25565.0';
       await handleOnChange(
         setErrorSpy,
         setValueSpy,
-        onChangeSpy,
-        grantApplicationPatcherSpy,
-        applicationId,
-        storeAs
+        setCustomValueVisibleSpy
       )(grantAmountAwarded);
 
       expect(setValueSpy).toHaveBeenCalledWith(grantAmountAwarded);
@@ -54,25 +48,26 @@ describe('<ApplicationGrantAmountSelector>', () => {
           },
         };
       });
-      const setValueSpy = jest.fn();
-      const onChangeSpy = jest.fn();
+      const value = 100.0;
+      const customValue = null;
       const setErrorSpy = jest.fn();
 
       const applicationId = 1;
       const storeAs = 'additionalRestrictionsGrant';
-      const grantAmountAwarded = '25565.0';
-      await handleOnChange(
-        setErrorSpy,
-        setValueSpy,
-        onChangeSpy,
+      await handleSubmit(
+        value,
+        customValue,
         grantApplicationPatcherSpy,
         applicationId,
-        storeAs
-      )(grantAmountAwarded);
+        storeAs,
+        setErrorSpy
+      );
 
       expect(setErrorSpy).toHaveBeenCalledWith(validationErrorMessage);
     });
+  });
 
+  describe('handleSubmit()', () => {
     it('Unsets the error if successful', async () => {
       const grantApplicationPatcherSpy = jest.fn();
       const setValueSpy = jest.fn();
@@ -95,25 +90,20 @@ describe('<ApplicationGrantAmountSelector>', () => {
       expect(setErrorSpy).toHaveBeenCalledWith(false);
     });
 
-    it('Triggers callback if successful', async () => {
-      const grantApplicationPatcherSpy = jest.fn();
+    it('Shows customValue input if Other selected', async () => {
       const setValueSpy = jest.fn();
-      const onChangeSpy = jest.fn();
       const setErrorSpy = jest.fn();
+      const setCustomValueVisibleSpy = jest.fn();
 
-      const applicationId = 1;
-      const storeAs = 'additionalRestrictionsGrant';
-      const grantAmountAwarded = '25565.0';
+      const grantAmountAwarded = 'Other';
       await handleOnChange(
         setErrorSpy,
         setValueSpy,
-        onChangeSpy,
-        grantApplicationPatcherSpy,
-        applicationId,
-        storeAs
+        setCustomValueVisibleSpy
       )(grantAmountAwarded);
 
-      expect(onChangeSpy).toHaveBeenCalledWith(grantAmountAwarded);
+      expect(setCustomValueVisibleSpy).toHaveBeenCalledTimes(1);
+      expect(setCustomValueVisibleSpy).toHaveBeenCalledWith(true);
     });
   });
 });
