@@ -36,26 +36,23 @@ export default async (req, res) => {
           req.query && req.query.businessCategory
             ? req.query.businessCategory
             : undefined;
-        const businessSubcategory =
-          req.query && req.query.businessSubcategory
-            ? req.query.businessSubcategory
-            : undefined;
 
         const grantOfficer =
           req.query && req.query.grantOfficer
             ? req.query.grantOfficer
             : undefined;
+
         const clientGeneratedId =
           req.query && req.query.applicationId
             ? req.query.applicationId
             : undefined;
+
         let listApplicationsResponse = await listApplications({
           currentPage,
           pageSize,
           sort,
           status,
           businessCategory,
-          businessSubcategory,
           grantOfficer,
           clientGeneratedId,
         });

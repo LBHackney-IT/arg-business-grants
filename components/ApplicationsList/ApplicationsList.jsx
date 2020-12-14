@@ -16,7 +16,6 @@ const ApplicationsList = ({
   status,
   grantOfficer,
   businessCategory,
-  businessSubcategory,
   applicationId,
   groups,
   csvDownloadGroup,
@@ -50,7 +49,6 @@ const ApplicationsList = ({
     grantOfficer,
     applicationId,
     businessCategory,
-    businessSubcategory,
   });
   const [error, setError] = useState();
   const [data, setData] = useState([]);
