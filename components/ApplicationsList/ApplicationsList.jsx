@@ -175,7 +175,7 @@ const ApplicationsList = ({
         </a>
       </p>
       <h2>Export payment details</h2>
-      <p>
+      <div>
         <p>
           {!canDownloadCsvs &&
             `These downloads are disabled as you are not part of the '${csvDownloadGroup}' user group`}
@@ -188,7 +188,7 @@ const ApplicationsList = ({
         >
           Export Panel Approved Payments
         </button>
-      </p>
+      </div>
     </>
   ) : (
     <ErrorMessage text={error} />
