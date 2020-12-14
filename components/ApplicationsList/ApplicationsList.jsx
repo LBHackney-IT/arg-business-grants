@@ -6,7 +6,11 @@ import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import { BasicSelect, TextInput } from 'components/Form';
 import { fetchApplications, patchApplications } from 'utils/api/applications';
 
-import { APPLICATION_STATE, BUSINESS_CATEGORIES } from 'lib/dbMapping';
+import {
+  APPLICATION_STATE,
+  BUSINESS_CATEGORIES,
+  BUSINESS_SIZE,
+} from 'lib/dbMapping';
 import { fetchGrantOfficers } from '../../utils/api/grantOfficers';
 
 const ApplicationsList = ({
@@ -16,6 +20,7 @@ const ApplicationsList = ({
   status,
   grantOfficer,
   businessCategory,
+  businessSize,
   applicationId,
   groups,
   csvDownloadGroup,
@@ -49,6 +54,7 @@ const ApplicationsList = ({
     grantOfficer,
     applicationId,
     businessCategory,
+    businessSize,
   });
   const [error, setError] = useState();
   const [data, setData] = useState([]);
@@ -148,6 +154,13 @@ const ApplicationsList = ({
         label="Filter by Business Category:"
         value={filters.businessCategory}
         onChange={(businessCategory) => setValues({ businessCategory })}
+      />
+
+      <BasicSelect
+        options={BUSINESS_SIZE}
+        label="Filter by Business Size:"
+        value={filters.businessSize}
+        onChange={(businessSize) => setValues({ businessSize })}
       />
 
       <TextInput
