@@ -42,6 +42,11 @@ export default async (req, res) => {
             ? req.query.businessSize
             : undefined;
 
+        const businessPremises =
+          req.query && req.query.businessPremises
+            ? req.query.businessPremises
+            : undefined;
+
         const grantOfficer =
           req.query && req.query.grantOfficer
             ? req.query.grantOfficer
@@ -61,6 +66,7 @@ export default async (req, res) => {
           grantOfficer,
           clientGeneratedId,
           businessSize,
+          businessPremises,
         });
         if (
           [PAGE_MUST_BE_AT_LEAST_ONE, PAGINATED_PAST_END].includes(

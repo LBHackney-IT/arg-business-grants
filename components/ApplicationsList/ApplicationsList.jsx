@@ -10,6 +10,7 @@ import {
   APPLICATION_STATE,
   BUSINESS_CATEGORIES,
   BUSINESS_SIZE,
+  TYPE_OF_BUSINESS,
 } from 'lib/dbMapping';
 import { fetchGrantOfficers } from '../../utils/api/grantOfficers';
 
@@ -21,6 +22,7 @@ const ApplicationsList = ({
   grantOfficer,
   businessCategory,
   businessSize,
+  businessPremises,
   applicationId,
   groups,
   csvDownloadGroup,
@@ -55,6 +57,7 @@ const ApplicationsList = ({
     applicationId,
     businessCategory,
     businessSize,
+    businessPremises,
   });
   const [error, setError] = useState();
   const [data, setData] = useState([]);
@@ -161,6 +164,13 @@ const ApplicationsList = ({
         label="Filter by Business Size:"
         value={filters.businessSize}
         onChange={(businessSize) => setValues({ businessSize })}
+      />
+
+      <BasicSelect
+        options={TYPE_OF_BUSINESS}
+        label="Filter by Business Premises:"
+        value={filters.businessPremises}
+        onChange={(businessPremises) => setValues({ businessPremises })}
       />
 
       <TextInput
