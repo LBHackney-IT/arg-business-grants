@@ -1,5 +1,5 @@
 ALTER TABLE application_assessment
-ADD grant_amount_awarded_round_2 numeric(12,2);
+ADD grant_amount_awarded_round_2 numeric(12,2) DEFAULT 0;
 
 ALTER TABLE application_assessment
 ADD date_time_recorded_temp timestamp;
