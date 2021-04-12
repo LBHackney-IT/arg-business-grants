@@ -16,6 +16,7 @@ const ApplicationView = ({ applicationId }) => {
   const [error, setError] = useState(false);
   const [status, setStatus] = useState();
   const [grantAmountAwarded, setGrantAwardedAmount] = useState();
+  const [grantAmountAwardedRound2, setGrantAwardedAmountRound2] = useState();
   const [validationRecap, setValidationRecap] = useState();
   const { register, watch, reset } = useForm({ defaultValues: {} });
   const watcher = watch({ nest: true });
@@ -140,13 +141,13 @@ const ApplicationView = ({ applicationId }) => {
                 />
 
                 <ApplicationGrantAmountSelector
-                  storeAs="grantAmountAwarded"
+                  storeAs="grantAmountAwardedRound2"
                   name="arg-round-2"
                   label="Round 2 Grant Amount"
                   options={GRANT_AMOUNT_ROUND_2}
                   grantAmountAwarded={data.grantAmountAwardedRound2}
                   applicationId={applicationId}
-                  onChange={setGrantAwardedAmount}
+                  onChange={setGrantAwardedAmountRound2}
                 />
               </div>
             </div>
@@ -179,6 +180,7 @@ const ApplicationView = ({ applicationId }) => {
             applicationId={applicationId}
             status={status}
             grantAmountAwarded={grantAmountAwarded}
+            grantAmountAwardedRound2={grantAmountAwardedRound2}
           />
         </>
       )}
