@@ -57,6 +57,7 @@ const ApplicationGrantAmountSelector = ({
   options,
   storeAs,
   onChange,
+  tag,
 }) => {
   const [error, setError] = useState();
   const [successMessage, setSuccessMessage] = useState(false);
@@ -82,6 +83,7 @@ const ApplicationGrantAmountSelector = ({
         value={value}
         error={error && { message: error }}
         isUnselectable={false}
+        tag={tag}
       />
       {customValueVisible && (
         <TextInput

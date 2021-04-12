@@ -138,6 +138,7 @@ const ApplicationView = ({ applicationId }) => {
                   grantAmountAwarded={data.grantAmountAwarded}
                   applicationId={applicationId}
                   onChange={setGrantAwardedAmount}
+                  tag={data.round1PaymentExported ? 'EXPORTED' : ''}
                 />
 
                 <ApplicationGrantAmountSelector
@@ -148,6 +149,7 @@ const ApplicationView = ({ applicationId }) => {
                   grantAmountAwarded={data.grantAmountAwardedRound2}
                   applicationId={applicationId}
                   onChange={setGrantAwardedAmountRound2}
+                  tag={data.round2PaymentExported ? 'EXPORTED' : ''}
                 />
               </div>
             </div>
