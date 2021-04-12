@@ -26,7 +26,7 @@ const ApplicationStateSelector = ({ status, onChange, applicationId }) => {
       <Select
         name="state"
         label="State"
-        options={APPLICATION_STATE}
+        options={Object.values(APPLICATION_STATE)}
         onChange={handleOnChange}
         value={value}
         error={error && { message: error }}

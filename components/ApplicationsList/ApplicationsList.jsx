@@ -139,7 +139,7 @@ const ApplicationsList = ({
   return !error ? (
     <>
       <BasicSelect
-        options={APPLICATION_STATE}
+        options={Object.values(APPLICATION_STATE)}
         label="Filter by Status:"
         value={filters.status}
         onChange={(status) => setValues({ status })}
