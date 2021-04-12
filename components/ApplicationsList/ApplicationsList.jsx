@@ -125,10 +125,10 @@ const ApplicationsList = ({
     },
     []
   );
-  const handleCsvDownload = async () => {
+  const handleCsvDownload = async (e) => {
     try {
-      setError(null);
-      const csv = await patchApplications();
+      const round = e.target.getAttribute('round');
+      const csv = await patchApplications({ round });
       window.open(encodeURI(`data:text/csv;charset=utf-8,${csv}`));
     } catch (e) {
       e.response.status = 400;
@@ -210,14 +210,28 @@ const ApplicationsList = ({
           {!canDownloadCsvs &&
             `These downloads are disabled as you are not part of the '${csvDownloadGroup}' user group`}
         </p>
-        <button
-          className="govuk-button govuk-button--secondary govuk-!-margin-right-1"
-          data-module="govuk-button"
-          onClick={handleCsvDownload}
-          {...csvExportProps}
-        >
-          Export Panel Approved Payments
-        </button>
+        <div>
+          <button
+            className="govuk-button govuk-button--secondary govuk-!-margin-right-1"
+            data-module="govuk-button"
+            round={1}
+            onClick={handleCsvDownload}
+            {...csvExportProps}
+          >
+            Export Panel Approved Payments (Round 1)
+          </button>
+        </div>
+        <div>
+          <button
+            className="govuk-button govuk-button--secondary govuk-!-margin-right-1"
+            data-module="govuk-button"
+            round={2}
+            onClick={handleCsvDownload}
+            {...csvExportProps}
+          >
+            Export Panel Approved Payments (Round 2)
+          </button>
+        </div>
       </div>
     </>
   ) : (

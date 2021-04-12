@@ -128,6 +128,7 @@ export default async (req, res) => {
         res.setHeader('Content-Disposition', 'filename=export.csv');
         const patchResponse = await patchApplications({
           author: getUserStringFromCookie(req.headers.cookie),
+          round: req.body.round,
         });
         res.end(patchResponse.csvString);
       } catch (error) {
