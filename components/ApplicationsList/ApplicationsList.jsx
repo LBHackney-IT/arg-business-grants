@@ -127,6 +127,7 @@ const ApplicationsList = ({
   );
   const handleCsvDownload = async (e) => {
     try {
+      setError(null);
       const round = e.target.getAttribute('round');
       const csv = await patchApplications({ round });
       window.open(encodeURI(`data:text/csv;charset=utf-8,${csv}`));
