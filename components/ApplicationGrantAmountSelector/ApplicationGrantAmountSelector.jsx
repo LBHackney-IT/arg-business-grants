@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Button, Select, TextInput } from 'components/Form';
 import { patchApplication } from 'utils/api/applications';
-import { GRANT_AMOUNT, FREE_TEXT } from '../../lib/dbMapping';
+import { FREE_TEXT } from '../../lib/dbMapping';
 
 export const handleOnChange = (
   setError,
@@ -61,10 +61,10 @@ const ApplicationGrantAmountSelector = ({
   const [error, setError] = useState();
   const [successMessage, setSuccessMessage] = useState(false);
   const [value, setValue] = useState(
-    GRANT_AMOUNT.includes(grantAmountAwarded) ? grantAmountAwarded : 'Other'
+    options.includes(grantAmountAwarded) ? grantAmountAwarded : 'Other'
   );
   const [customValueVisible, setCustomValueVisible] = useState(
-    !GRANT_AMOUNT.includes(grantAmountAwarded)
+    !options.includes(grantAmountAwarded)
   );
   const [customValue, setCustomValue] = useState(grantAmountAwarded);
   return (

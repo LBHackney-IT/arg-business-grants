@@ -144,7 +144,7 @@ const ApplicationView = ({ applicationId }) => {
                   name="arg-round-2"
                   label="Round 2 Grant Amount"
                   options={GRANT_AMOUNT_ROUND_2}
-                  grantAmountAwarded={data.grantAmountAwarded}
+                  grantAmountAwarded={data.grantAmountAwardedRound2}
                   applicationId={applicationId}
                   onChange={setGrantAwardedAmount}
                 />
