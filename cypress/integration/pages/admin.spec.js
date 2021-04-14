@@ -19,8 +19,42 @@ context('Admin', () => {
       );
     });
 
-    it('displays correct applications', () => {
+    it('displays correct number of applications', () => {
       cy.get('[data-testid=table-row]').should('have.length', 5);
+    });
+  });
+
+  describe('filters', () => {
+    it('displays correct name in the heading', () => {
+      cy.get('[data-testid=basic-select]')
+        .eq(0)
+        .children()
+        .should('have.length', 12);
+
+      cy.get('[data-testid=basic-select]')
+        .eq(1)
+        .children()
+        .should('have.length', 3);
+
+      cy.get('[data-testid=basic-select]')
+        .eq(2)
+        .children()
+        .should('have.length', 22);
+
+      cy.get('[data-testid=basic-select]')
+        .eq(3)
+        .children()
+        .should('have.length', 3);
+
+      cy.get('[data-testid=basic-select]')
+        .eq(4)
+        .children()
+        .should('have.length', 10);
+
+      cy.get('[data-testid=basic-select]')
+        .eq(5)
+        .children()
+        .should('have.length', 3);
     });
   });
 });

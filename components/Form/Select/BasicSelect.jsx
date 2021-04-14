@@ -11,6 +11,7 @@ const BasicSelect = ({ value, onChange = console.log, label, options }) => (
       onChange={(e) => {
         onChange(e.target.value || undefined);
       }}
+      data-testid="basic-select"
     >
       <option value="">All</option>
       {options.map((option, i) => (
