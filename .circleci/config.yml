@@ -13,7 +13,7 @@ executors:
       - image: circleci/python:3.7
 
 references:
-  workspace_root: &workspace_root "~"
+  workspace_root: &workspace_root '~'
   attach_workspace: &attach_workspace
     attach_workspace:
       at: *workspace_root
@@ -35,6 +35,10 @@ jobs:
       - run:
           name: Run unit tests
           command: yarn run unit-test
+
+      - run:
+          name: Run integration tests
+          command: yarn run int-test
 
       - run:
           name: Run linting
@@ -70,7 +74,7 @@ jobs:
       - aws_assume_role/assume_role:
           account: $AWS_ACCOUNT_STAGING
           profile_name: default
-          role: "LBH_Circle_CI_Deployment_Role"
+          role: 'LBH_Circle_CI_Deployment_Role'
       - persist_to_workspace:
           root: *workspace_root
           paths:
@@ -83,7 +87,7 @@ jobs:
       - aws_assume_role/assume_role:
           account: $AWS_ACCOUNT_PRODUCTION
           profile_name: default
-          role: "LBH_Circle_CI_Deployment_Role"
+          role: 'LBH_Circle_CI_Deployment_Role'
       - persist_to_workspace:
           root: *workspace_root
           paths:

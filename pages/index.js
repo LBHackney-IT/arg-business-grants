@@ -5,7 +5,9 @@ import { stepPath, stepKeys } from 'components/Steps';
 export default function Home({ date, expirationDate }) {
   return (
     <div>
-      <h1>Apply for the COVID-19 Additional Restrictions Grant - Round 2</h1>
+      <h1 data-testid="home-page-heading">
+        Apply for the COVID-19 Additional Restrictions Grant - Round 2
+      </h1>
       <p className="govuk-body">
         The Government has announced a series of grants for certain businesses
         affected by the COVID-19 pandemic.
@@ -16,6 +18,7 @@ export default function Home({ date, expirationDate }) {
         <a
           className="govuk-link"
           href="https://www.gov.uk/guidance/check-if-youre-eligible-for-the-coronavirus-additional-restrictions-grant"
+          data-testid="arg-govuk-link"
         >
           Additional Restrictions Grant
         </a>
@@ -23,7 +26,11 @@ export default function Home({ date, expirationDate }) {
       </p>
       <p className="govuk-body">
         Check{' '}
-        <a className="govuk-link" href="https://hackney.gov.uk/business-grants">
+        <a
+          className="govuk-link"
+          href="https://hackney.gov.uk/business-grants"
+          data-testid="arg-hackney-link"
+        >
           additional restrictions grant
         </a>{' '}
         for more information by Hackney Council.
