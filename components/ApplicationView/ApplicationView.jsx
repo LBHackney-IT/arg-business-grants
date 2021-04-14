@@ -70,14 +70,20 @@ const ApplicationView = ({ applicationId }) => {
           <div className="govuk-main-wrapper">
             <div className="govuk-grid-row">
               <div className="govuk-grid-column-two-thirds">
-                <h1 className="govuk-!-margin-top-0">
+                <h1
+                  className="govuk-!-margin-top-0"
+                  data-testid="application-view-business-name"
+                >
                   {data.business.businessName}
                 </h1>
                 <div className="govuk-body">
                   Submitted: {new Date(data.applicationDate).toLocaleString()}
                 </div>
                 <div className="govuk-!-margin-top-7 govuk-!-margin-bottom-7">
-                  <p className="govuk-body">
+                  <p
+                    className="govuk-body"
+                    data-testid="application-view-business-email"
+                  >
                     Email:{' '}
                     <a
                       href={`mailto:${data.contact.emailAddress}`}
@@ -87,7 +93,10 @@ const ApplicationView = ({ applicationId }) => {
                     </a>
                   </p>
                   {data.contact.telephoneNumber && (
-                    <p className="govuk-body">
+                    <p
+                      className="govuk-body"
+                      data-testid="application-view-business-phone"
+                    >
                       Phone:{' '}
                       <a
                         href={`tel:${data.contact.emailAddress}`}
@@ -98,7 +107,10 @@ const ApplicationView = ({ applicationId }) => {
                     </p>
                   )}
                   {data.business.previousApplicationId && (
-                    <p className="govuk-body">
+                    <p
+                      className="govuk-body"
+                      data-testid="application-view-previuos-application"
+                    >
                       Previous Application:{' '}
                       {parseInt(data.business.previousApplicationFound) ===
                       1 ? (

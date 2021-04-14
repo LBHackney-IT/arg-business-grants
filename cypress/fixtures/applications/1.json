@@ -1,0 +1,110 @@
+{
+  "application": {
+    "clientGeneratedId": "1",
+    "applicationDate": "2020-04-12T10:37:54.284Z",
+    "status": "Processed - Approved",
+    "grantAmountAwarded": "2000.00",
+    "grantAmountAwardedRound2": "0.00",
+    "round1PaymentExported": true,
+    "round2PaymentExported": false,
+    "eligibilityCriteria": {
+      "tradingInHackney": false,
+      "meetsArgCriteria": null,
+      "meetsArgCriteriaRound2": false,
+      "servedLegalNotices": false,
+      "tradingOn041120": null,
+      "tradingOn011220": false,
+      "eligibleForLrsgClosedGrant": null,
+      "eligibleForLrsgGrants": false
+    },
+    "contact": {
+      "firstName": "Yusuf",
+      "lastName": "Bee",
+      "emailAddress": "email@address.com",
+      "telephoneNumber": "0123456789",
+      "address": {
+        "buildName": "",
+        "streetNumber": "3",
+        "street": "street3",
+        "town": "town3",
+        "postcode": "SW1A 2CC"
+      },
+      "dateOfBirth": null
+    },
+    "business": {
+      "businessName": "Business One",
+      "registeredName": "Registered Name",
+      "previouslyApplied": false,
+      "previousApplicationId": "2",
+      "previousApplicationFound": "1",
+      "liableForRates": false,
+      "howManyEmployees": "2",
+      "businessCategory": "Section C: Manufacturing",
+      "businessReferenceNumber": "",
+      "businessDescription": "Jewellery making",
+      "businessSizeId": "Micro",
+      "businessIdentifyType": "Company Number - 12345678",
+      "businessStructure": "Charity",
+      "businessRatesAccountNumber": "612345678",
+      "businessRatesPayer": "Business Rates Payer",
+      "businessPremisesDescription": "Individual office null",
+      "tradingDaysPerWeek": "4",
+      "businessRateableValue": "321",
+      "businessTradingAddress": {
+        "buildName": "",
+        "streetNumber": "1",
+        "street": "street",
+        "town": "town",
+        "postcode": "SW1A 2AA"
+      },
+      "businessAddress": {
+        "buildName": "",
+        "streetNumber": "2",
+        "street": "street2",
+        "town": "town2",
+        "postcode": "SW1A 2BB"
+      },
+      "businessWebsite": "https://example.com",
+      "businessImpactStatement": "Well bad."
+    },
+    "documents": [
+      {
+        "s3Path": "faked_it_out_for_local_testing.ext",
+        "documentType": "bankStatement"
+      },
+      {
+        "s3Path": "test.png",
+        "documentType": "bankStatement"
+      },
+      {
+        "s3Path": "faked_it_out_for_local_testing.ext",
+        "documentType": "leaseOrRentalAgreement"
+      },
+      {
+        "s3Path": "faked_it_out_for_local_testing.ext",
+        "documentType": "photoId"
+      }
+    ],
+    "businessBankAccount": {
+      "bankName": "Bank",
+      "accountHolder": "Account",
+      "accountNumber": "12345678",
+      "accountSortcode": "123456"
+    },
+    "declaration": {
+      "name": "Yusuf Bee",
+      "contactTypeId": "Agent (Authorised to act) null",
+      "authoriseOnBehalf": true,
+      "businessMeetsCriteria": true,
+      "businessIWillInform": true,
+      "businessNotExceed": true,
+      "businessNotUndertaking": true,
+      "businessRecoverableAgreement": true,
+      "businessPermitData": null,
+      "businessPermitDataRound2": true,
+      "businessShareWithBEIS": true,
+      "businessHappyContacted": true
+    }
+  },
+  "validations": "{}"
+}

@@ -23,7 +23,12 @@ const Select = ({
     })}
   >
     <label className="govuk-label govuk-label--m" htmlFor={name}>
-      {label} {tag && <span class="govuk-tag govuk-tag--green">{tag}</span>}
+      {label}{' '}
+      {tag && (
+        <span class="govuk-tag govuk-tag--green" data-testid="form-select-tag">
+          {tag}
+        </span>
+      )}
     </label>
     {hint && (
       <span id={`${name}-hint`} className="govuk-hint">
