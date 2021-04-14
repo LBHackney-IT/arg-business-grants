@@ -1,0 +1,10 @@
+{
+  "grantOfficers": [
+    {
+      "identifier": "Name Surname <name@test.gov.uk>"
+    },
+    {
+      "identifier": "system"
+    }
+  ]
+}

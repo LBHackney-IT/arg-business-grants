@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import jwt from 'jsonwebtoken';
+
+const setHackneyCookie = (isValidGroup) => {
+  const group = isValidGroup ? 'admin-group' : 'some-other-group';
+  const token = jwt.sign(
+    { name: 'Name from the token', groups: [group] },
+    'a-secure-signature'
+  );
+  cy.setCookie('hackneyToken', token, {
+    url: 'http://localhost:3000',
+    domain: 'localhost',
+  });
+};
+
+Cypress.Commands.add('setHackneyCookie', setHackneyCookie);

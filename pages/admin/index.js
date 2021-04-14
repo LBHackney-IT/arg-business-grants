@@ -4,7 +4,7 @@ import ApplicationsList from 'components/ApplicationsList/ApplicationsList';
 
 const AdminPage = ({ name, ...props }) => (
   <>
-    <h1>Hello {name}</h1>
+    <h1 data-testid="admin-page-heading">Hello {name}</h1>
     <ApplicationsList {...props} />
   </>
 );

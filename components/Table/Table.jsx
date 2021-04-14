@@ -84,6 +84,7 @@ const Table = ({
             const queryParameters = getQueryParametersAsObject();
             return (
               <tr
+                data-testid="table-row"
                 className="govuk-table__row lbh-table__row--data"
                 {...row.getRowProps()}
                 onClick={() =>

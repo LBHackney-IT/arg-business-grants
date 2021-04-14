@@ -1,0 +1,45 @@
+{
+  "applications": [
+    {
+      "clientGeneratedId": "1",
+      "businessName": "Business One",
+      "applicationDate": "2020-04-12T10:37:54.284Z",
+      "status": "Processed - Approved"
+    },
+    {
+      "clientGeneratedId": "2",
+      "businessName": "Business Two",
+      "applicationDate": "2021-01-01T10:24:06.470Z",
+      "status": "Processed - Approved"
+    },
+    {
+      "clientGeneratedId": "3",
+      "businessName": "Business Three",
+      "applicationDate": "2021-01-08T10:24:02.708Z",
+      "status": "LRSG Eligible"
+    },
+    {
+      "clientGeneratedId": "4",
+      "businessName": "Business Four",
+      "applicationDate": "2021-01-09T11:43:27.576Z",
+      "status": "Processed - Approved"
+    },
+    {
+      "clientGeneratedId": "5",
+      "businessName": "Business Five",
+      "applicationDate": "2021-04-09T14:49:29.452Z",
+      "status": "Processed - Approved"
+    }
+  ],
+  "pagination": {
+    "totalPages": 1,
+    "currentPage": 1,
+    "links": {
+      "firstPage": "/api/applications?page=1&pageSize=10",
+      "lastPage": "/api/applications?page=1&pageSize=10",
+      "previousPage": null,
+      "nextPage": "/api/applications?page=2&pageSize=10"
+    }
+  },
+  "error": null
+}
