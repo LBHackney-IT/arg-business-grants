@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Link from 'next/link';
 
-import SummaryList from 'components/SummaryList/SummaryList';
-import ExpandableDetails from 'components/ExpandableDetails/ExpandableDetails';
-import { getInputProps, hasAdminValidation, stepPath } from 'components/Steps';
+import SummaryList from '../SummaryList/SummaryList';
+import ExpandableDetails from '../ExpandableDetails/ExpandableDetails';
+import { getInputProps, hasAdminValidation, stepPath } from '../Steps';
 
 const MultiValue = (value) => (
   <div key={value}>

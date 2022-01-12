@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Checkbox } from 'components/Form';
+import { Checkbox } from '../Form';
 
 const SummaryList = ({ list, name, register }) => (
   <dl className="govuk-summary-list">

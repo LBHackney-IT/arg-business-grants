@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import fileUploader from 'utils/fileUpload';
-import { Button } from 'components/Form';
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import fileUploader from '../../utils/fileUpload';
+import { Button } from '../../components/Form';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 const Uploader = (props) => {
   const [fileUploaded, setFileUploaded] = useState();

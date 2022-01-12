@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
 import Router from 'next/router';
 
-import { Button, TextInput, DateInput } from 'components/Form';
-import { stepPath, getInputProps } from 'components/Steps';
-import AddressLookup from 'components/Form/AddressLookup/AddressLookup';
+import { Button, TextInput, DateInput } from '../Form';
+import { stepPath, getInputProps } from '../Steps';
+import AddressLookup from '../Form/AddressLookup/AddressLookup';
 
 const Step1 = (props) => {
   const { register, control, errors, handleSubmit } = useForm({

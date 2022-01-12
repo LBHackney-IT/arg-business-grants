@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import Router from 'next/router';
 
-import { Button, Checkbox, Select, TextInput } from 'components/Form';
-import { stepPath, getInputProps } from 'components/Steps';
+import { Button, Checkbox, Select, TextInput } from '../Form';
+import { stepPath, getInputProps } from '../Steps';
 import { FREE_TEXT } from '../../lib/dbMapping';
 
 const Declaration = (props) => {

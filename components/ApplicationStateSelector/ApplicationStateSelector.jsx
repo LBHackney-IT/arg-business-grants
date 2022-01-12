@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-import { Select } from 'components/Form';
+import { Select } from '../Form';
 import { APPLICATION_STATE } from 'lib/dbMapping';
-import { patchApplication } from 'utils/api/applications';
+import { patchApplication } from '../../utils/api/applications';
 
 const ApplicationStateSelector = ({ status, onChange, applicationId }) => {
   const [error, setError] = useState();

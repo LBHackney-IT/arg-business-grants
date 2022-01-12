@@ -1,7 +1,7 @@
 import * as HttpStatus from 'http-status-codes';
 import { customAlphabet } from 'nanoid';
 import AppContainer from '../../../containers/AppContainer';
-import { getUserStringFromCookie } from 'utils/auth';
+import { getUserStringFromCookie } from '../../../utils/auth';
 import {
   PAGE_MUST_BE_AT_LEAST_ONE,
   PAGINATED_PAST_END,

@@ -1,6 +1,6 @@
 import Router from 'next/router';
-import { isExpired } from 'utils/date';
-import { stepPath, stepKeys } from 'components/Steps';
+import { isExpired } from '../utils/date';
+import { stepPath, stepKeys } from '../components/Steps';
 
 export default function Home({ date, expirationDate }) {
   return (

@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Router from 'next/router';
 
-import { Button, Radios, Select, TextInput } from 'components/Form';
-import { stepPath, getInputProps } from 'components/Steps';
-import ErrorSummary from 'components/ErrorSummary/ErrorSummary';
+import { Button, Radios, Select, TextInput } from '../Form';
+import { stepPath, getInputProps } from '../Steps';
+import ErrorSummary from '../ErrorSummary/ErrorSummary';
 
 const Step1 = (props) => {
   const { register, errors, handleSubmit } = useForm({

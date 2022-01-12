@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
 
-import Summary from 'components/Summary/Summary';
-import ErrorSummary from 'components/ErrorSummary/ErrorSummary';
-import { set } from 'utils/persistency';
-import { postApplication } from 'utils/api/applications';
+import Summary from '../Summary/Summary';
+import ErrorSummary from '../ErrorSummary/ErrorSummary';
+import { set } from '../../utils/persistency';
+import { postApplication } from '../../utils/api/applications';
 
 const Result = ({ formData, clearFormData }) => {
   const [error, setError] = useState(false);

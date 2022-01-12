@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 
 const TextInput = ({
   label,

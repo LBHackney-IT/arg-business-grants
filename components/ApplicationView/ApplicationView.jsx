@@ -2,14 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 
-import { GRANT_AMOUNT, GRANT_AMOUNT_ROUND_2 } from 'lib/dbMapping';
-import { fetchApplication, patchApplication } from 'utils/api/applications';
-import Summary from 'components/Summary/Summary';
-import ExpandableDetails from 'components/ExpandableDetails/ExpandableDetails';
-import ApplicationGrantAmountSelector from 'components/ApplicationGrantAmountSelector/ApplicationGrantAmountSelector';
-import ApplicationStateSelector from 'components/ApplicationStateSelector/ApplicationStateSelector';
-import Comments from 'components/Comments/Comments';
-import { Checkbox } from 'components/Form';
+import { GRANT_AMOUNT, GRANT_AMOUNT_ROUND_2 } from '../../lib/dbMapping';
+import {
+  fetchApplication,
+  patchApplication,
+} from '../../utils/api/applications';
+import Summary from '../Summary/Summary';
+import ExpandableDetails from '../ExpandableDetails/ExpandableDetails';
+import ApplicationGrantAmountSelector from '../ApplicationGrantAmountSelector/ApplicationGrantAmountSelector';
+import ApplicationStateSelector from '../ApplicationStateSelector/ApplicationStateSelector';
+import Comments from '../Comments/Comments';
+import { Checkbox } from '../Form';
 
 const ApplicationView = ({ applicationId }) => {
   const [data, setData] = useState();

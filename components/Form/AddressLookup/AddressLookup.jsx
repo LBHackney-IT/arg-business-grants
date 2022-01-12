@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import isPostcodeValid from 'uk-postcode-validator';
 
-import { TextInput } from 'components/Form';
+import { TextInput } from '../TextInput/TextInput';
 
 const AddressBox = ({ name, register, error = {} }) => (
   <div className="govuk-form-group">

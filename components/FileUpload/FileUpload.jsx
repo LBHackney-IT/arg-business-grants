@@ -3,9 +3,9 @@ import cx from 'classnames';
 
 import { Controller } from 'react-hook-form';
 
-import fileUploader from 'utils/fileUpload';
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
-import DeleteIcon from 'components/Icons/DeleteIcon';
+import fileUploader from '../../utils/fileUpload';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import DeleteIcon from '../Icons/DeleteIcon';
 
 const FileUpload = ({
   label,

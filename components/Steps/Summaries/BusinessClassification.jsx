@@ -1,4 +1,4 @@
-import ExpandableDetails from 'components/ExpandableDetails/ExpandableDetails';
+import ExpandableDetails from '../../ExpandableDetails/ExpandableDetails';
 
 export default () => (
   <ExpandableDetails summary="Help with business classification">

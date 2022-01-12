@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 
 const defaultOptions = ['Yes', 'No'];
 

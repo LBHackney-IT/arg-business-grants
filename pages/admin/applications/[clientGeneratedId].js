@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
-import { redirectIfNotAuth } from 'utils/auth';
-import ApplicationView from 'components/ApplicationView/ApplicationView';
+import { redirectIfNotAuth } from '../../utils/auth';
+import ApplicationView from '../../../components/ApplicationView/ApplicationView';
 
 const ApplicationViewPage = () => {
   const router = useRouter();

@@ -1,17 +1,16 @@
 import isValid from 'date-fns/isValid';
 import isPast from 'date-fns/isPast';
 
-import EligibilityCriteria from 'components/Steps/EligibilityCriteria';
-import SupplementaryInformation from 'components/Steps/SupplementaryInformation';
-import YourDetails from 'components/Steps/YourDetails';
-import BusinessDetails from 'components/Steps/BusinessDetails';
-import BankDetails from 'components/Steps/BankDetails';
-import Declaration from 'components/Steps/Declaration';
-import Summary from 'components/Steps/Summary';
+import EligibilityCriteria from './EligibilityCriteria';
+import SupplementaryInformation from './SupplementaryInformation';
+import YourDetails from './YourDetails';
+import BusinessDetails from './BusinessDetails';
+import BankDetails from './BankDetails';
+import Declaration from './Declaration';
+import Summary from './Summary';
+import BusinessClassificationSummary from './Summaries/BusinessClassification';
 
-import BusinessClassificationSummary from 'components/Steps/Summaries/BusinessClassification';
-
-import * as options from 'lib/dbMapping';
+import * as options from '../../lib/dbMapping';
 
 export const stepPath = '/step/[id]';
 

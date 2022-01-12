@@ -1,10 +1,13 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import Router, { useRouter } from 'next/router';
 
-import Table from 'components/Table/Table';
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
-import { BasicSelect, TextInput } from 'components/Form';
-import { fetchApplications, patchApplications } from 'utils/api/applications';
+import Table from '../Table/Table';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { BasicSelect, TextInput } from '../Form';
+import {
+  fetchApplications,
+  patchApplications,
+} from '../../utils/api/applications';
 
 import {
   APPLICATION_STATE,
@@ -12,7 +15,7 @@ import {
   BUSINESS_SIZE,
   DATES,
   TYPE_OF_BUSINESS,
-} from 'lib/dbMapping';
+} from '../../lib/dbMapping';
 import { fetchGrantOfficers } from '../../utils/api/grantOfficers';
 
 const ApplicationsList = ({

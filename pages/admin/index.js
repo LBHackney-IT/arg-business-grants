@@ -1,6 +1,6 @@
-import { redirectIfNotAuth } from 'utils/auth';
+import { redirectIfNotAuth } from '../../utils/auth';
 
-import ApplicationsList from 'components/ApplicationsList/ApplicationsList';
+import ApplicationsList from '../../components/ApplicationsList/ApplicationsList';
 
 const AdminPage = ({ name, ...props }) => (
   <>

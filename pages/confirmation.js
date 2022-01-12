@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 
-import Summary from 'components/Summary/Summary';
-import WarningText from 'components/WarningText/WarningText';
-import { get } from 'utils/persistency';
+import Summary from '../Summary/Summary';
+import WarningText from '../WarningText/WarningText';
+import { get } from '../../utils/persistency';
 
 export default function confirmation() {
   const router = useRouter();

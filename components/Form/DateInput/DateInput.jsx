@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Controller } from 'react-hook-form';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 
 const getInitialDate = (value) => {
   const [year = '', month = '', day = ''] = value?.split('-') || [];

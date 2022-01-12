@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
 import Router from 'next/router';
 
-import { Button, TextInput, Select, Radios, TextArea } from 'components/Form';
-import { stepPath, getInputProps } from 'components/Steps';
-import AddressLookup from 'components/Form/AddressLookup/AddressLookup';
+import { Button, TextInput, Select, Radios, TextArea } from '../Form';
+import { stepPath, getInputProps } from '../Steps';
+import AddressLookup from '../Form/AddressLookup/AddressLookup';
 import { FREE_TEXT } from '../../lib/dbMapping';
 
 const businessIdentifyNumber = (businessType) => {

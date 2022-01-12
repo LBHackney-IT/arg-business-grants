@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { Button, Select, TextInput } from 'components/Form';
-import { patchApplication } from 'utils/api/applications';
+import { Button, Select, TextInput } from '../Form';
+import { patchApplication } from '../../utils/api/applications';
 import { FREE_TEXT } from '../../lib/dbMapping';
 
 export const handleOnChange = (

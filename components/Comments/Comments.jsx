@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
-import { TextArea, Button } from 'components/Form';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { TextArea, Button } from '../Form';
 
 import styles from './Comments.module.css';
 
