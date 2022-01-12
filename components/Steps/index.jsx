@@ -13,7 +13,7 @@ import BusinessClassificationSummary from 'components/Steps/Summaries/BusinessCl
 
 import * as options from 'lib/dbMapping';
 
-export const stepPath = '/step/[id]';
+export const stepPath = '[stepName]';
 
 export const steps = {
   'eligibility-criteria': EligibilityCriteria,

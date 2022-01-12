@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Router from 'next/router';
 
 import { Button, Radios } from 'components/Form';
-import { stepPath, getInputProps } from 'components/Steps';
+import { getInputProps } from 'components/Steps';
 import ErrorSummary from 'components/ErrorSummary/ErrorSummary';
 
 const Step1 = (props) => {
@@ -32,7 +32,7 @@ const Step1 = (props) => {
 
     if (eligible) {
       props.saveData(data);
-      Router.push(stepPath, props.nextStep);
+      Router.push(`/grant/${props.grantName}/step/${props.nextStep}`);
     }
   };
 
