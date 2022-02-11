@@ -193,8 +193,8 @@ custom:
     staging: staging-additionalrestrictionsgrant.hackney.gov.uk
     production: additionalrestrictionsgrant.hackney.gov.uk
   certificate-arn:
-    staging: arn:aws:acm:us-east-1:715003523189:certificate/8f7fa30c-a4e5-4775-b827-ade824a33c9a
-    production: arn:aws:acm:us-east-1:153306643385:certificate/71728a39-cd3e-4570-a440-e87f84ef9a0d
+    staging: arn:aws:acm:us-east-1:715003523189:certificate/ce5972e2-bb6d-4d24-9b92-1112996ab984
+    production: arn:aws:acm:us-east-1:153306643385:certificate/20a3eb57-66c4-447b-94c4-530a0f03a2db
   subnets:
     staging:
       - subnet-07e8364b
