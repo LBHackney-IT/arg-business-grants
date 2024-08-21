@@ -23,6 +23,7 @@ jobs:
     executor: aws-cli/default
     steps:
       - *attach_workspace
+      - checkout
       - run:
           name: deploy
           command: yarn build && yarn --production=true && sudo npm i -g serverless && sls deploy --stage staging
@@ -33,6 +34,7 @@ jobs:
 
     steps:
       - *attach_workspace
+      - checkout
       - run:
           name: deploy
           command: yarn build && yarn --production=true && sudo npm i -g serverless && sls deploy --stage production
