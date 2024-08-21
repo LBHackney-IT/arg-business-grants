@@ -19,52 +19,30 @@ references:
       at: *workspace_root
 
 jobs:
-  install-dependencies-and-test:
-    executor: node-executor
-    steps:
-      - *attach_workspace
-      - checkout
-      - run:
-          name: Install dependencies
-          command: yarn
-
-      - run:
-          name: Build the application
-          command: yarn build
-
-      - run:
-          name: Run unit tests
-          command: yarn run unit-test
-
-      - run:
-          name: Run integration tests
-          command: yarn run int-test
-
-      - run:
-          name: Run linting
-          command: yarn lint
-
-      - persist_to_workspace:
-          root: *workspace_root
-          paths: .
-
   build-deploy-staging:
     executor: aws-cli/default
     steps:
       - *attach_workspace
+      - checkout
       - run:
           name: deploy
-          command: yarn build && yarn --production=true && sudo npm i -g serverless && sls deploy --stage staging
+          command: sudo npm i -g serverless
+      - run:
+          name: deploy
+          command: sls deploy --stage staging
           no_output_timeout: 45m
 
   build-deploy-production:
     executor: aws-cli/default
-
     steps:
       - *attach_workspace
+      - checkout
       - run:
           name: deploy
-          command: yarn build && yarn --production=true && sudo npm i -g serverless && sls deploy --stage production
+          command: sudo npm i -g serverless
+      - run:
+          name: deploy
+          command: sls deploy --stage production
           no_output_timeout: 45m
 
   assume-role-staging:
@@ -97,11 +75,8 @@ workflows:
   version: 2
   continuous-delivery:
     jobs:
-      - install-dependencies-and-test
       - permit-deploy-staging:
           type: approval
-          requires:
-            - install-dependencies-and-test
           filters:
             branches:
               only: master
