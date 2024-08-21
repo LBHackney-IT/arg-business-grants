@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run:
           name: deploy
-          command: sudo npm i -g serverless
+          command: sudo npm i -g serverless@^3
       - run:
           name: deploy
           command: sls deploy --stage staging
@@ -39,7 +39,7 @@ jobs:
       - checkout
       - run:
           name: deploy
-          command: sudo npm i -g serverless
+          command: sudo npm i -g serverless@^3
       - run:
           name: deploy
           command: sls deploy --stage production
