@@ -20,53 +20,6 @@ package:
     - ./**
 
 functions:
-  additional-restrictions-grant:
-    name: ${self:service}-${self:provider.stage}
-    handler: lambda.handler
-    timeout: 20
-    package:
-      include:
-        - lambda.js
-        - next.config.js
-        - pages/**
-        - public/**
-        - build/_next/**
-        - node_modules/**
-    events:
-      - http:
-          path: api/{proxy+}
-          method: ANY
-          authorizer:
-            name: authorizer
-            type: request
-            identitySource: ''
-            resultTtlInSeconds: 0
-      - http: ANY /
-      - http: ANY /{proxy+}
-    vpc:
-      securityGroupIds:
-        - Fn::GetAtt:
-          - additionalRestrictionsGrantDbSecurityGroup
-          - GroupId
-      subnetIds: ${self:custom.subnets.${self:provider.stage}}
-    environment:
-      ENV: ${self:provider.stage}
-      HOST:
-        Fn::GetAtt:
-          - additionalRestrictionsGrantDb
-          - Endpoint.Address
-      USERNAME: ${env:MASTER_USERNAME}
-      PASSWORD: ${env:MASTER_USER_PASSWORD}
-      DATABASE: ${self:provider.dbname}
-      SUPPORTING_DOCUMENTS_BUCKET: ${self:custom.bucket}
-      URL_PREFIX: ${self:custom.aliases.${self:provider.stage}}
-      EXPIRATION_DATE: ${env:EXPIRATION_DATE}
-      HACKNEY_AUTH_URL: ${env:HACKNEY_AUTH_URL}
-      GOV_NOTIFY_API_KEY: ${env:GOV_NOTIFY_API_KEY}
-      EMAIL_APPLICATION_RECEIVED_TEMPLATE_ID: ${env:EMAIL_APPLICATION_RECEIVED_TEMPLATE_ID}
-      CSV_DOWNLOAD_GROUP: ${env:CSV_DOWNLOAD_GROUP}
-      NEXT_PUBLIC_EQUALITIES_GOOGLE_FORM_URL: ${env:NEXT_PUBLIC_EQUALITIES_GOOGLE_FORM_URL}
-
   authorizer:
     name: ${self:service}-authorizer-${self:provider.stage}
     handler: authorizer.handler
