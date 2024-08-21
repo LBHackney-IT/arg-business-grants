@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run:
           name: deploy
-          command: yarn build && yarn --production=true && sudo npm i -g serverless && sls deploy --stage staging
+          command: sudo npm i -g serverless && sls deploy --stage staging
           no_output_timeout: 45m
 
   build-deploy-production:
@@ -37,7 +37,7 @@ jobs:
       - checkout
       - run:
           name: deploy
-          command: yarn build && yarn --production=true && sudo npm i -g serverless && sls deploy --stage production
+          command: sudo npm i -g serverless && sls deploy --stage production
           no_output_timeout: 45m
 
   assume-role-staging:
