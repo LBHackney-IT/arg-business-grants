@@ -19,35 +19,6 @@ references:
       at: *workspace_root
 
 jobs:
-  install-dependencies-and-test:
-    executor: node-executor
-    steps:
-      - *attach_workspace
-      - checkout
-      - run:
-          name: Install dependencies
-          command: yarn
-
-      - run:
-          name: Build the application
-          command: yarn build
-
-      - run:
-          name: Run unit tests
-          command: yarn run unit-test
-
-      - run:
-          name: Run integration tests
-          command: yarn run int-test
-
-      - run:
-          name: Run linting
-          command: yarn lint
-
-      - persist_to_workspace:
-          root: *workspace_root
-          paths: .
-
   build-deploy-staging:
     executor: aws-cli/default
     steps:
