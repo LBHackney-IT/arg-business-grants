@@ -2,7 +2,6 @@ service: additional-restrictions-grant
 
 provider:
   name: aws
-  runtime: nodejs12.x
   region: eu-west-2
   stage: ${opt:stage}
   dbname: additionalRestrictionsGrantDb
