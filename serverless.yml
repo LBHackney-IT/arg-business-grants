@@ -45,11 +45,12 @@ resources:
       Type: AWS::EC2::SecurityGroup
       Properties:
         GroupDescription: Allow internal VPC
-        # SecurityGroupIngress:
-        # - IpProtocol: tcp
-        #   FromPort: '5432'
-        #   ToPort: '5432'
-        #   CidrIp: 172.31.0.0/16
+        VpcId: vpc-076787007f8a53eaa
+        SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '5432'
+          ToPort: '5432'
+          CidrIp: 172.31.0.0/16
 
     additionalRestrictionsGrantDb:
       Type: AWS::RDS::DBInstance
@@ -66,10 +67,10 @@ resources:
         MultiAZ: true
         PubliclyAccessible: false
         StorageEncrypted: true
-        # VPCSecurityGroups:
-        # - Fn::GetAtt:
-        #   - additionalRestrictionsGrantDbSecurityGroup
-        #   - GroupId
+        VPCSecurityGroups:
+        - Fn::GetAtt:
+          - additionalRestrictionsGrantDbSecurityGroup
+          - GroupId
         Tags:
           -
             Key: "Name"
