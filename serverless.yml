@@ -74,7 +74,7 @@ resources:
           -
             Key: "Name"
             Value: "additionalRestrictionsGrantsDb"
-      DeletionPolicy: "Snapshot"
+      DeletionPolicy: Delete
 
 custom:
   bucket: ${self:service}-supporting-documents-${self:provider.stage}
