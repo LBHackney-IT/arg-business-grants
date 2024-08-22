@@ -23,10 +23,26 @@ jobs:
     executor: aws-cli/default
     steps:
       - *attach_workspace
+      - aws-cli/install
       - checkout
       - run:
           name: deploy
           command: sudo npm i -g serverless@^3
+      - run:
+          name: clear bucket
+          command: |
+            bucket_name="additional-restrictions-grant-supporting-documents-staging"
+            aws s3 rm "s3://$bucket_name" --recursive
+            aws s3api list-object-versions --bucket $bucket_name --query 'Versions[].[Key,VersionId]' --output text | \
+            while IFS=$'\t' read -r key version_id; do
+              echo -e "K: #$key#, V: #$version_id#"
+              aws s3api delete-object --bucket $bucket_name --key "$key" --version-id "$version_id"
+            done
+            aws s3api list-object-versions --bucket $bucket_name --query 'DeleteMarkers[].[Key,VersionId]' --output text | \
+            while IFS=$'\t' read -r key version_id; do
+              echo -e "K: #$key#, V: #$version_id#"
+              aws s3api delete-object --bucket $bucket_name --key "$key" --version-id "$version_id"
+            done
       - run:
           name: deploy
           command: sls remove --stage staging
