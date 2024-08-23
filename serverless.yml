@@ -17,6 +17,7 @@ resources:
   Resources:
     additionalRestrictionsGrantSupportingDocumentsBucket:
         Type: AWS::S3::Bucket
+        DeletionPolicy: Retain
         Properties:
           BucketName: ${self:custom.bucket}
           PublicAccessBlockConfiguration:
