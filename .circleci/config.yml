@@ -5,9 +5,6 @@ orbs:
   aws_assume_role: lbh-hackit/aws_assume_role@0.1.0
 
 executors:
-  node-executor:
-    docker:
-      - image: circleci/node:12.9.1-browsers
   docker-python:
     docker:
       - image: circleci/python:3.7
@@ -19,20 +16,6 @@ references:
       at: *workspace_root
 
 jobs:
-  build-deploy-staging:
-    executor: aws-cli/default
-    steps:
-      - *attach_workspace
-      - aws-cli/install
-      - checkout
-      - run:
-          name: deploy
-          command: sudo npm i -g serverless@^3
-      - run:
-          name: deploy
-          command: sls remove --stage staging
-          no_output_timeout: 45m
-
   build-deploy-production:
     executor: aws-cli/default
     steps:
@@ -45,19 +28,6 @@ jobs:
           name: deploy
           command: sls deploy --stage production
           no_output_timeout: 45m
-
-  assume-role-staging:
-    executor: docker-python
-    steps:
-      - checkout
-      - aws_assume_role/assume_role:
-          account: $AWS_ACCOUNT_STAGING
-          profile_name: default
-          role: 'LBH_Circle_CI_Deployment_Role'
-      - persist_to_workspace:
-          root: *workspace_root
-          paths:
-            - .aws
 
   assume-role-production:
     executor: docker-python
@@ -76,29 +46,11 @@ workflows:
   version: 2
   continuous-delivery:
     jobs:
-      - permit-deploy-staging:
-          type: approval
-          filters:
-            branches:
-              only: master
-      - assume-role-staging:
-          context: api-assume-role-staging-context
-          requires:
-            - permit-deploy-staging
-          filters:
-            branches:
-              only: master
-      - build-deploy-staging:
-          requires:
-            - assume-role-staging
-          filters:
-            branches:
-              only:
-                - master
       - permit-deploy-production:
           type: approval
-          requires:
-            - build-deploy-staging
+          filters:
+            branches:
+              only: master
       - assume-role-production:
           context: api-assume-role-production-context
           requires:
