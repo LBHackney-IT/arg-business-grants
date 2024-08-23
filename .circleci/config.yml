@@ -22,11 +22,11 @@ jobs:
       - *attach_workspace
       - checkout
       - run:
-          name: deploy
+          name: install
           command: sudo npm i -g serverless@^3
       - run:
-          name: deploy
-          command: sls deploy --stage production
+          name: destroy
+          command: sls remove --stage production
           no_output_timeout: 45m
 
   assume-role-production:
