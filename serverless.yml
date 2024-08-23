@@ -45,7 +45,6 @@ resources:
       Type: AWS::EC2::SecurityGroup
       Properties:
         GroupDescription: Allow internal VPC
-        VpcId: vpc-076787007f8a53eaa
         SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: '5432'
