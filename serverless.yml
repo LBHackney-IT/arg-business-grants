@@ -57,11 +57,12 @@ resources:
       Properties:
         AllocatedStorage: 5
         DBInstanceIdentifier: "${self:service}-db-${self:provider.stage}"
-        DBInstanceClass: "db.t2.small"
+        DBInstanceClass: "db.t3.small"
+        CACertificateIdentifier: 'rds-ca-rsa2048-g1'
         DBName: ${self:provider.dbname}
         DeletionProtection: false
         Engine: "postgres"
-        EngineVersion: "11.7"
+        EngineVersion: "11.22"
         MasterUsername: ${env:MASTER_USERNAME}
         MasterUserPassword: ${env:MASTER_USER_PASSWORD}
         MultiAZ: true
@@ -72,9 +73,12 @@ resources:
           - additionalRestrictionsGrantDbSecurityGroup
           - GroupId
         Tags:
-          -
-            Key: "Name"
+          - Key: "Name"
             Value: "additionalRestrictionsGrantsDb"
+          - Key: "STAGE"
+            Value: ${self:provider.stage}
+          - Key: "BackupPolicy"
+            Value: "Prod"
       DeletionPolicy: Delete
 
 custom:
