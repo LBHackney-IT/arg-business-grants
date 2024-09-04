@@ -1,5 +1,7 @@
 # Additional Restrictions Grant
 
+This application and its cloud resources _(except the S3 bucket)_ have been decommissioned.
+
 **NOTE: This application is based on the work in [Mandatory Business Grants](https://github.com/LBHackney-IT/mandatory-business-grants)
 (which in turn is based on [Discretionary Business Grants](https://github.com/LBHackney-IT/discretionary-business-grants) (we know this is not good...) - which
 provides all the groundwork for this application. The clone of the work is to enable this application, and
